@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+networkx
+numpy
+scikit-learn
+sentence-transformers
+pydantic-settings

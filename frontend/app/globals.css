@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#121212] dark:text-slate-100;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #94a3b8;
+  border-radius: 10px;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background-color: #475569;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  --loader-color: #0f172a;
+  --c: no-repeat linear-gradient(var(--loader-color) 0 0);
+  background:
+    var(--c) 0 0,
+    var(--c) 0 100%,
+    var(--c) 50% 0,
+    var(--c) 50% 100%,
+    var(--c) 100% 0,
+    var(--c) 100% 100%;
+  background-size: 8px 50%;
+  animation: l9-0 2s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--loader-color);
+  top: calc(50% - 4px);
+  left: -8px;
+  animation: inherit;
+  animation-name: l9-1;
+}
+
+.dark .loader {
+  --loader-color: #e2e8f0;
+}
+
+@keyframes l9-0 {
+  16.67% {
+    background-size: 8px 30%, 8px 30%, 8px 50%, 8px 50%, 8px 50%, 8px 50%;
+  }
+  33.33% {
+    background-size: 8px 30%, 8px 30%, 8px 30%, 8px 30%, 8px 50%, 8px 50%;
+  }
+  50% {
+    background-size: 8px 30%, 8px 30%, 8px 30%, 8px 30%, 8px 50%, 8px 50%;
+  }
+  66.67% {
+    background-size: 8px 50%, 8px 50%, 8px 30%, 8px 30%, 8px 50%, 8px 50%;
+  }
+  83.33% {
+    background-size: 8px 50%, 8px 50%, 8px 50%, 8px 50%, 8px 50%, 8px 50%;
+  }
+}
+
+@keyframes l9-1 {
+  20% {
+    left: 0;
+  }
+  40%,
+  70% {
+    left: calc(50% - 4px);
+  }
+  80%,
+  85% {
+    left: 8px;
+    top: calc(50% - 4px);
+  }
+  100% {
+    left: 8px;
+    top: -8px;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 380ms ease-out both;
+}
