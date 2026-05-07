@@ -5,6 +5,9 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Citation Network Explorer",
   description: "Explore papers with citation graph and semantic similarity",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
