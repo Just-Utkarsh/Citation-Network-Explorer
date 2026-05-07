@@ -2,6 +2,8 @@ https://citation-network-explorer-theta.vercel.app/    -----   Use with a VPN
 
 (Some ISPs (especially Jio) have inconsistent DNS/IPv6 routing for certain cloud-hosted domains, so using Cloudflare WARP/VPN bypasses the ISP routing issue and fixes connectivity.)
 
+https://github.com/user-attachments/assets/1af4ab75-49fc-457d-97fc-15dd554a061e
+
 # Citation Network Explorer
 
 A full-stack research discovery platform that helps users explore academic papers through **citation graphs**, **influence ranking**, and **lightweight ML-powered relevance scoring**.
