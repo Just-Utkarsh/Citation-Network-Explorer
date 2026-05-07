@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { GraphView } from "@/components/GraphView";
@@ -51,7 +52,10 @@ export default function HomePage() {
 
       <header className="fade-up mb-6 flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold">Citation Network Explorer</h1>
+          <div className="mb-2 flex items-center gap-3">
+            <Image src="/logo.png" alt="Citation Network Explorer logo" width={36} height={36} priority />
+            <h1 className="text-2xl font-bold">Citation Network Explorer</h1>
+          </div>
           <p className="text-sm text-slate-600 dark:text-slate-300">
             Explore scientific literature through citation graphs and semantic similarity.
           </p>
