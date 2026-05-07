@@ -110,5 +110,3 @@ The project demonstrates how combining:
 - and scalable APIs
 
 can create practical research discovery tools.
-
-OpenAlex Research API
