@@ -3,4 +3,5 @@ uvicorn[standard]
 httpx
 networkx
 numpy
+scipy
 pydantic-settings
