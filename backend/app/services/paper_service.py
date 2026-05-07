@@ -82,7 +82,7 @@ class PaperSearchService:
         influence_scores = {paper_id: score for paper_id, score in influential_pairs}
         graph_nodes, graph_edges = self.graph_builder.to_serializable(graph, influence_scores)
         influential_ids = [paper_id for paper_id, _ in influential_pairs]
-        recommendations = self.recommender.recommend(papers, top_k=5)
+        recommendations = self.recommender.recommend(query=query, papers=papers, top_k=5)
         insights = self.generate_insights(papers, influential_ids)
 
         return SearchResponse(

@@ -6,7 +6,6 @@ class Settings(BaseSettings):
     openalex_base_url: str = "https://api.openalex.org"
     max_results: int = 25
     request_timeout_seconds: float = 20.0
-    embedding_model_name: str = "sentence-transformers/all-MiniLM-L6-v2"
 
     model_config = SettingsConfigDict(env_prefix="CNE_", env_file=".env")
 
