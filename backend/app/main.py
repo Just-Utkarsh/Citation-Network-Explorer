@@ -14,6 +14,11 @@ app.add_middleware(
 )
 
 
+@app.get("/")
+async def root() -> dict[str, str]:
+    return {"status": "ok"}
+
+
 @app.get("/health")
 async def health() -> dict[str, str]:
     return {"status": "ok"}
