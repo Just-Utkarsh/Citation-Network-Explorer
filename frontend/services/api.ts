@@ -15,7 +15,16 @@ export async function searchTopic(query: string, limit = 20): Promise<SearchResp
 
   const response = await fetch(url.toString(), { cache: "no-store" });
   if (!response.ok) {
-    throw new Error(`Search failed with status ${response.status}`);
+    let details = "";
+    try {
+      const errorPayload = await response.json();
+      if (errorPayload?.detail) {
+        details = `: ${String(errorPayload.detail)}`;
+      }
+    } catch {
+      // Ignore JSON parsing errors and keep status-only fallback.
+    }
+    throw new Error(`Search failed with status ${response.status}${details}`);
   }
   return response.json();
 }
